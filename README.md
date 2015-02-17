@@ -1,4 +1,22 @@
 ## Website Performance Optimization portfolio project
+Task 1 Optimization of index.html to achieve a PageSpeed score of 90
+
+==> Initial PageSpeed score (mobile/desktop):           77 / 90
+
+* unblock HTML rendering by
+    1. move async print.css to the end of body
+    2. inline style.css
+==> no significant speed improvement:                   77 / 90
+
+* remove render-blocking JavaScript Google's analytics.js
+==> slight improvement:                                 78 / 91
+
+* remove WebFont link
+==> bingo - target reached:                             96 / 97
+                                                        =======
+
+
+## the original README.md text
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
