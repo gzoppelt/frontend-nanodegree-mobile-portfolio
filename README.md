@@ -4,19 +4,21 @@
 |Step        | Action                                      | Speed   |
 |------------|---------------------------------------------|:-------:|
 | *Task 1*   | initial PageSpeed score (mobile/desktop):   | 77 / 90 |
-| index.html | * unblock HTML rendering by                 |         |
+| index.html |||
+|            | unblock HTML rendering by                 |         |
 |            |   - move async print.css to the end of body |         |
 |            |   - inline style.css                        |         |
-|            | * no significant speed improvement:         | 77 / 90 |
-|            |                                             |         |
-|            | * remove render-blocking JavaScript (Google's analytics.js)   |         |
-|            | * slight improvement:                       | 78 / 91 |
-||||
-|            | * remove WebFont link                       |         |
-|            | * bingo - target reached:                   |**96 / 97**|
-|------------|---------------------------------------------|---------|
-| *Task 2*   |
-| pizza.html |
+|            | no significant speed improvement:         | 77 / 90 |
+||---||
+|            | remove render-blocking JavaScript (Google's analytics.js)   |         |
+|            | slight improvement:                       | 78 / 91 |
+||---||
+|            | remove WebFont link                       |         |
+|            | bingo - target reached:                   |**96 / 97**|
+|---|---|---|
+| *Task 2*   | initial Measurements (FPS Counter) whilst scrolling in fps: | 24 - 26 |
+| pizza.html |||
+|            |
 
 ## The original README.md text
 
