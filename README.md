@@ -1,24 +1,42 @@
 ## Website Performance Optimization portfolio project
-###Task 1 Optimization of index.html to achieve a PageSpeed score of 90
+####Task 1 Optimization of index.html to achieve a PageSpeed score of 90
 
-|Step        | Action                                      | Speed   |
-|------------|---------------------------------------------|:-------:|
-| *Task 1*   | initial PageSpeed score (mobile/desktop):   | 77 / 90 |
-| index.html |||
-|            | unblock HTML rendering by                 |         |
-|            |   - move async print.css to the end of body |         |
-|            |   - inline style.css                        |         |
-|            | no significant speed improvement:         | 77 / 90 |
-||---||
-|            | remove render-blocking JavaScript (Google's analytics.js)   |         |
-|            | slight improvement:                       | 78 / 91 |
-||---||
-|            | remove WebFont link                       |         |
-|            | bingo - target reached:                   |**96 / 97**|
-|---|---|---|
-| *Task 2*   | initial Measurements (FPS Counter) whilst scrolling in fps: | 24 - 26 |
-| pizza.html |||
-|            |
+|Step        | Action                                                       |  initial  | resulting |
+|------------|--------------------------------------------------------------|:---------:|:---------:|
+| *Task 1*   | initial PageSpeed score (mobile/desktop):                    |  77 / 90  |           |
+| index.html |                                                              |           |           |
+|            | unblock HTML rendering by                                    |           |           |
+|            |   - move async print.css to the end of body                  |           |           |
+|            |   - inline style.css                                         |           |           |
+|            | no significant speed improvement:                            |  77 / 90  |           |
+|            |--------------------------------------------------------------|-----------|-----------|
+|            | remove render-blocking JavaScript (Google's analytics.js)    |           |           |
+|            | slight improvement:                                          |  78 / 91  |           |
+|            |---                                                           |           |           |
+|            | remove WebFont link                                          |           |           |
+|            | reduce size of pizzeria.jpg - target reached:                |           |**96 / 97**|
+|------------|--------------------------------------------------------------|-----------|-----------|
+
+####Task 2 Optimization of main.js to achieve a PageSpeed score > 60 whilst scrolling
+|------------|--------------------------------------------------------------|-----------|-----------|
+| *Task 2*   | Step 1:                                                      |           |           |
+| pizza.html | Replace all style attribute in pizza.html with classes and   |           |           |
+| main.js    | rewrite function resizePizzas() to amend these classes       | 162.86 ms |  0.39 ms  |
+|            |--------------------------------------------------------------|-----------|-----------|
+|            | Step 2:                                                      |           |           |
+|            | Remove pizzaElementGenerator() and generate the pizzas in the|           |           |
+|            | for-loop by cloning pizza0                                   |           |           |
+|            | **Time to generate pizzas on load                            |  20.16 ms | 16.16 ms**|
+|            |--------------------------------------------------------------|-----------|-----------|
+|            | Step 3:                                                      |           |           |
+|            | optimize creation of sliding pizzas and updatePositions()    |           |           |
+|            | reduce the number of movers created from 200 to 50           |           |           |
+|            | **Average time to generate last 10 frames [ms]               |  20-23 ms |  0.34 ms**|
+|            |                                                              |           |           |
+|            | required frame rate:                                         |           |           |
+|            | If run on the phone a frame rate of > 60 FPS is reached      | 28-30 FPS |**>60 FPS**|
+|------------|--------------------------------------------------------------|-----------|-----------|
+
 
 ## The original README.md text
 
@@ -54,7 +72,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main_orig.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main_orig.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
