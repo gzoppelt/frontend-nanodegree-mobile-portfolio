@@ -15,9 +15,10 @@
 |            |---                                                           |           |           |
 |            | remove WebFont link                                          |           |           |
 |            | reduce size of pizzeria.jpg - target reached:                |           |**96 / 97**|
-|------------|--------------------------------------------------------------|-----------|-----------|
 
-####Task 2 Optimization of main.js to achieve a PageSpeed score > 60 whilst scrolling
+
+####Task 2 Optimization of main.js to achieve a speed >60 FPS whilst scrolling
+|Step        | Action                                                       |  initial  | resulting |
 |------------|--------------------------------------------------------------|-----------|-----------|
 | *Task 2*   | Step 1:                                                      |           |           |
 | pizza.html | Replace all style attribute in pizza.html with classes and   |           |           |
