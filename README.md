@@ -3,11 +3,12 @@
 
 | Action                                                       |  initial  | resulting |
 |--------------------------------------------------------------|:---------:|:---------:|
-| * move async print.css to the end of body                    |  77 / 90  |           |
-| * inline style.css                                           |           |  77 / 90  |
-| * remove render-blocking JavaScript (Google's analytics.js)  |           |  78 / 91  |
-| * remove WebFont link                                        |           |           |
-| * reduce size of pizzeria.jpg                                |           |**96 / 97**|
+| * move async print.css to the end of body    [mobile/desktop]|  54 / 59  |           |
+| * inline style.css                                           |           |  54 / 59  |
+| * minified inline css as well as print.min.css               |           |  54 / 59  |
+| * resize pictures and deliver them locally                   |           |  75 / 87  |
+| * remove render-blocking JavaScript (Google's analytics.js)  |           |**91 / 93**|
+measured using https://developers.google.com/speed/pagespeed/insights/
 
 
 ####Task 2 Optimization of main.js to achieve a speed >60 FPS whilst scrolling
@@ -16,15 +17,16 @@
 |--------------------------------------------------------------|-----------|-----------|
 | Step 1:                                                      |           |           |
 | Replace all style attribute in pizza.html with classes and   |           |           |
-| rewrite function resizePizzas() to amend these classes       | 162.86 ms |**0.39 ms**|
+| rewrite function resizePizzas() to amend these classes       |           |           |
+| **Time to resize pizzas:**                                   | 162.86 ms |**0.39 ms**|
 | Step 2:                                                      |           |           |
 | Remove pizzaElementGenerator() and generate the pizzas in the|           |           |
 | for-loop by cloning pizza0                                   |           |           |
-| **Time to generate pizzas on load                            |  20.16 ms |**16.16 ms**|
+| **Time to generate pizzas on load:**                         |  20.16 ms |**15.80 ms**|
 | Step 3:                                                      |           |           |
 | optimize creation of sliding pizzas and updatePositions()    |           |           |
 | reduce the number of movers created from 200 to 50           |           |           |
-| **Average time to generate last 10 frames [ms]               |  20-23 ms |**0.34 ms**|
+| **Average time to generate last 10 frames:**                 |  20-23 ms |**0.34 ms**|
 |                                                              |           |           |
 | required frame rate:                                         |           |           |
 | If run on the phone a frame rate of > 60 FPS is reached      | 28-30 FPS |**>60 FPS**|
